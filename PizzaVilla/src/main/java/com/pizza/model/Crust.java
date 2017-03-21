@@ -6,12 +6,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Crust {
+public class Crust 
+{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int crustId;
 	private String crustName;
 	private String crustDescription;
+
 	public int getCrustId() {
 		return crustId;
 	}
@@ -30,6 +32,7 @@ public class Crust {
 	public void setCrustDescription(String crustDescription) {
 		this.crustDescription = crustDescription;
 	}
+
 
 
 }

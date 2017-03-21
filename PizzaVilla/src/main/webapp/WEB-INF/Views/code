@@ -1,0 +1,200 @@
+index.jsp
+
+<%@ include file="template.jsp"%>
+<%@ include file="headerMenu.jsp"%>
+<html style="padding-top:25px">
+<body style="padding-top:25px; 
+	background-image: url('Resources/Images/InsidePizzaVilla.png');
+	/* Full height */
+	height: 100%;
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover"> 
+
+<!-- PARALLAX MOUSE MOBILE-->
+<div class="container-fluid wrapper col-xs-12 hidden-sm hidden-lg hidden-md">
+<!------------ Parallax Scene-------------------->
+<ul id="scene2" class="scene">	  	
+<li class="layer" data-depth="1"><img src="Resources/Images/PizzaMobile.png" class="img-responsive"></li>
+</ul>
+<!------------ End - Parallax Scene------------->
+</div>
+<!-- END PARALLAX MOUSE MOBILE-->
+
+<!-- PARALLAX MOUSE LARGE SCREEN-->
+<div class="container-fluid wrapper hidden-sm col-lg-12 col-md-12 hidden-xs img-responsive">
+<!------------ Parallax Scene-------------------->
+<ul id="scene" class="scene">	  	
+<li class="layer" data-depth="0.38"><img src="Resources/Images/Layer3.png" class="img-responsive"></li>
+<li class="layer" data-depth="0.155"><img src="Resources/Images/Layer4.png" class="img-responsive"></li>  
+<li class="layer" data-depth="0.23"><img src="Resources/Images/Layer5.png" class="img-responsive"></li>
+<li class="layer" data-depth="0.14"><img src="Resources/Images/Layer9.png" class="img-responsive"></li>
+<li class="layer" data-depth="0.245"><img src="Resources/Images/Layer7.png" class="img-responsive"></li>
+<li class="layer" data-depth="0.11"><img src="Resources/Images/Layer8.png" class="img-responsive"></li>
+<li class="layer" data-depth="0.12"><img src="Resources/Images/Layer11.png" class="img-responsive"></li>
+<li class="layer" data-depth="0.145"><img src="Resources/Images/Layer6.png" class="img-responsive"></li>
+<li class="layer" data-depth="0.13"><img src="Resources/Images/Layer12.png" class="img-responsive"></li>
+<li class="layer"><img src="Resources/Images/Layer2.png" class="moveUp img-responsive"></li>
+</ul>
+<!------------ End - Parallax Scene------------->
+</div>
+<!-- END PARALLAX MOUSE -->
+
+<!-- PARALLAX MOUSE TABLET-->
+<div class="container-fluid wrapper hidden-xs col-sm-12 hidden-lg hidden-md">
+<!------------ Parallax Scene-------------------->
+<ul id="scene3" class="scene">	  	
+<li class="layer" data-depth="1"><img src="Resources/Images/PizzaTablet.png" class="img-responsive"></li>
+</ul>
+<!------------ End - Parallax Scene------------->
+</div>
+<!-- END PARALLAX MOUSE TABLET-->
+
+<!-- -----------Parallax Mouse Effect-------- -->
+<script>
+var scene = document.getElementById('scene');
+var parallax = new Parallax(scene)
+</script>
+<script>
+var scene = document.getElementById('scene2');
+var parallax = new Parallax(scene)
+</script>
+<script>
+var scene = document.getElementById('scene3');
+var parallax = new Parallax(scene)
+</script>
+<!-- -----------End Parallax Mouse Effect-------- -->
+
+<!--Image Responsive-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--End Image Responsive-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+li.layer a {
+	color:white;
+	text-decoration:none;
+	text-shadow: 3px 3px 3px #ccc; 
+	display: block; 
+}
+li.layer:nth-child(1) {} /*1 item*/
+
+/*-----Logotype----------------*/
+li.layer:nth-child(2) a{
+	font-size:3.5vw; 
+	color:white;
+	text-shadow: 2px 2px 2px #ccc;
+	padding:7px;
+	border:2px solid white;
+	border-radius:5px;
+	box-shadow:2px 2px 2px #ccc;
+	position: absolute;
+    top:40vh;
+	left:40vw;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+li.layer:nth-child(2) a:hover{
+	font-size:4.5vw; 
+}
+
+/*-----P----------------------*/
+li.layer:nth-child(3) a{
+	font-size:5vw;
+	position:absolute;
+	top:15vh;
+	left:15vw;
+}
+
+/*-----O---------------------*/
+li.layer:nth-child(4) a{
+	font-size:8vw;
+	position:absolute;
+	top:40vh;
+	left:22vw;
+}
+
+/*-----R---------------------*/
+li.layer:nth-child(5) a{
+	font-size:6vw;
+	position:absolute;
+	top:70vh;
+	left:35vw;
+}
+
+/*-----T---------------------*/
+li.layer:nth-child(6) a{
+	font-size:3.5vw;
+	position:absolute;
+	top:60vh;
+	left:47vw;
+}
+
+/*-----F---------------------*/
+li.layer:nth-child(7) a{
+	font-size:3.5vw;
+	position:absolute;
+	top:18vh;
+	left:40vw;
+}
+
+/*-----O---------------------*/
+li.layer:nth-child(8) a{
+	font-size:3.5vw;
+	position:absolute;
+	top:18vh;
+	left:55vw;
+}
+
+/*-----L---------------------*/
+li.layer:nth-child(9) a{
+	font-size:5vw;
+	position:absolute;
+	top:15vh;
+	right:20vw;
+}
+
+/*-----I---------------------*/
+li.layer:nth-child(10) a{
+	font-size:6vw;
+	position:absolute;
+	top:35vh;
+	right:30vw;
+}
+/*-----O---------------------*/
+li.layer:nth-child(11) a{
+	font-size:6.5vw;
+	position:absolute;
+	top:65vh;
+	right:37vw;
+}
+
+  
+  

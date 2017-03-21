@@ -11,4 +11,5 @@ public interface CrustDAO
 	public List<Crust> listCrust();
 	public Crust getCrustById(int crustId);
 	public void removeCrust(int crustId);
+	public Crust getCrustByName(String crustName);
 }

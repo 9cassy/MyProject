@@ -11,7 +11,8 @@ import com.pizza.model.Category;
 
 @Service
 @Transactional
-public class CategoryService {
+public class CategoryService 
+{
 	@Autowired
 	CategoryDAOImpl categoryDAOImpl;
 	
@@ -25,4 +26,20 @@ public class CategoryService {
 		return this.categoryDAOImpl.listCategory();
 	}
 	
+	public String listCategoryByJSON()
+	{
+		return this.categoryDAOImpl.listCategoryByJSON();
+	}
+	
+	public Category getCategoryByName(String categoryName) {
+		return categoryDAOImpl.getCategoryByName(categoryName);
+	}
+	
+	public Category getCategoryById(int categoryId) {
+		return categoryDAOImpl.getCategoryById(categoryId);
+	}
+	
+	public void deleteCategory(int categoryId){
+		this.categoryDAOImpl.deleteCategory(categoryId);	
+	}
 }

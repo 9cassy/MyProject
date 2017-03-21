@@ -1,12 +1,4 @@
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page isELIgnored ="true" %>
-<html>
-<head>
-<title>Crust</title>
-</head>
-<body>
-
+<%@ include file="template.jsp"%>
 	<form:form method="POST" commandName="crust" action="addCrust">
 		<table>
 			<tr>
@@ -22,12 +14,12 @@
 					value="Submit"></td>
 			</tr>
 			
-			<c:forEach var="i" items="${crustList}">
 			<tr>
 			<td>Sr No.</td>
 			<td>Name</td>
 			<td>Description</td>
 			</tr>
+			<c:forEach var="i" items="${crustList}">
 			<tr>
 			<td>${i.crustId}</td>
 			<td>${i.crustName}</td>
@@ -38,5 +30,3 @@
 		</table>
 	</form:form>
 
-</body>
-</html>

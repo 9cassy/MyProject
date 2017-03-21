@@ -10,21 +10,26 @@ import com.pizza.model.Crust;
 import com.pizza.service.CrustService;
 
 @Controller
-
 public class CrustController {
 	@Autowired
 	CrustService crustService;
 	
-	@RequestMapping("/crustForm")
+	//Crust Form
+	@RequestMapping("crustForm")
 	public String getCrustForm(Model model) 
 	{
 		model.addAttribute("crust", new Crust());
+		model.addAttribute("crustList", crustService.listCrust());
 		return "crustForm";
 	}
-	@RequestMapping("/addCrust")
+	
+	//Button Click Action
+	@RequestMapping("addCrust")
 	public String addCrust(@ModelAttribute("crust") Crust crust) {
 		crustService.addCrust(crust);
 		
-		return "redirect:/crust";
+		return "redirect:/crustForm";
 	}
+	
+	
 }

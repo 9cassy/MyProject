@@ -1,0 +1,696 @@
+Web project - Dynamic web proect - Maven Project (For Project architecture(by default) & jar files)
+1
+2. Location Workspace
+Webapp
+(below webapp-frontend, above webapp-backend)
+
+Bootstrap
+-framework
+-Combination of JS & CSS
+
+
+IDE:
+	- Eclipse: - To create maven project.
+			   - Difference between maven webapp and dynamic webapp:
+					1. Maven enviroment or tool automatically downloads the jar files whichever are needed.
+					2. pom.xml: - Maven tells you add the links which you want to the jar files for.
+								- The links are available in mvnrepository.
+Model:
+	- Agile with Devops	
+	
+Architechture:
+	- Spring MVC Architechture	
+
+Frontend:
+	- Bootstrap: For responsive website.
+	- JQuery: For EventHandling
+	- HTML5 
+	- CSS3
+	
+Backend:
+	- H2 Database
+	- Spring MVC (MVC - Model View Controller)
+	
+Middleware:
+	- Hibernate
+	
+Authentication and Authorization:
+	- Spring Security
+	
+CRUD:
+	- Admin: Category, Products, Users
+	- Supplier: Create and Sell Products
+	- User
+	
+Spring Webflow:
+	- Add to cart
+	- Buy now
+	- Wishlist
+	
+Registration
+
+-------------------------------------------------------------------------------------------------------------------------------------------					
+
+User:
+	-> www.google.com 
+	-> web.xml 
+	-> dispatcher-servlet: Dispatcher has the address of the controller. 
+	-> controller: Returns the particular method to the servlet. 
+	-> servlet: Takes the help of view resolver 
+	 			To extract the index.jsp 
+	 			And return to the user
+
+Example:
+		 @RequestMapping("/")
+		 public String getHome() {
+			 return "index";
+		 }
+
+-------------------------------------------------------------------------------------------------------------------------------------------					
+Hibernate Configuration
+
+backend - h2 database / mysql
+
+db-config.xml - dataSource , sessionFactory , transactionManager
+
+spring - orm, context
+hibernate- middleware - CRUD - create read update delete
+commons dbcp
+
+
+hibernate dialect
+
+mvnrepo
+hibernate - core, h2- 1.4.192
+spring orm , spring-context
+common dbcp
+
+-------------------------------------------------------------------------------------------------------------------------------------------					
+Bean:
+	- Bean is used to do manual binding.
+	- Bean is used if @Autowired isn't working.
+
+1. Model / Entity:
+	- Class to declare variables.
+	- @Entity: Creates table in database automatically using Hibernate.	
+	- @Id: To specify an entity field as the primary key.
+	- @GeneratedValue
+
+2. DAO:
+	- Interface to declare methods.
+
+3. DAOImpl:
+	- Class that implements DAO Interface.
+	- Write query statement.
+	- Spring >> Hibernate
+	- @Repository
+
+4. Service:
+	- To execute the query.
+	- Hibernate >> H2
+	- @Service
+	- @Transactional
+
+5. Controller:
+	- Mapping frontend and backend.
+	- @Controller
+	- @RequestMapping: To create URL.
+	- @ModelAttribute: To get data from frontend.
+	- @PathVariable: To specify the frontend column.
+	
+-------------------------------------------------------------------------------------------------------------------------------------------					
+Multipart File Upload
+
+Multipart is used so that our database does not get heavy with images.
+Hence these's no column of images in the database.
+& Hence we use java i/o.
+
+1. Dependency: 
+	- Commons IO
+    - Commons FileUpload
+
+2. Model class:
+	- @Transient
+	  private MultipartFile toppingImage;
+	- getters setters
+
+3. Controller
+
+4. File:
+	- form:
+		enctype="multipart/form-data"
+
+5. app-context:
+	- multipart resolver
+	
+-------------------------------------------------------------------------------------------------------------------------------------------					
+Validation
+
+
+	
+-------------------------------------------------------------------------------------------------------------------------------------------					
+	
+	<div>
+<ul class="nav nav-tabs col-sm-12" style="padding-top:34px">
+    <li class="active" style="background-image: url(Resources/Images/yellowbg.jpg); border-radius: 5px 0px 0px 0px"><a href="#veggie">Veggie</a></li>
+    <li style="background-image: url(Resources/Images/yellowbg.jpg)"><a href="#meat">Meat</a></li>
+    <li style="background-image: url(Resources/Images/yellowbg.jpg); border-radius: 0px 5px 0px 0px"><a href="#crustFlavor">Crust Flavor</a></li>
+  </ul>
+  
+<div class="tab-content">
+    <div id="veggie" class="tab-pane fade in active">
+    <div class="col-sm-12" style="padding-top:20px">
+    
+    
+
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%; padding-top:0px" fkid="topping1" onclick="addRemoveTopping(this)" id="button1"><img src="Resources/Images/itm006683.png" style="width:100%"/><div class="w3-display-bottommiddle w3-container" style="width: 100%; text-align: center">Sliced Black Olives</div></div>
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006688.png" style="width:100%" fkid="topping2" onclick="addRemoveTopping(this)" id="button2"></div>
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006690.png" style="width:100%" fkid="topping3" onclick="addRemoveTopping(this)" id="button3"></div>
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006691.png" style="width:100%"></div>
+		</div>
+		<div class="col-sm-12">
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006667.png" style="width:100%"></div>
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006693.png" style="width:100%"></div>
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006696.png" style="width:100%"></div>
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006697.png" style="width:100%"></div>
+		</div>
+		<div class="col-sm-12">
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006699.png" style="width:100%"></div>
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006701.png" style="width:100%"></div>
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006702.png" style="width:100%"></div>
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006704.png" style="width:100%"></div>
+		</div>
+    </div> <!-- End of tab1 -->
+    <div id="meat" class="tab-pane fade">
+      <div class="col-sm-12" style="padding-top:20px">
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006681.png" style="width:100%"></div>
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006682.png" style="width:100%"></div>
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006684.png" style="width:100%"></div>
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006685.png" style="width:100%"></div>
+		</div>
+		<div class="col-sm-12">
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006686.png" style="width:100%"></div>
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006689.png" style="width:100%"></div>
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006698.png" style="width:100%"></div>
+			<div class="col-sm-3 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006700.png" style="width:100%"></div>
+		</div>
+		<div class="col-sm-12">
+			<div class="col-sm-12 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm006703.png" style="width:100%"></div>
+		</div>	
+    </div> <!-- End of tab2 -->
+    <div id="crustFlavor" class="tab-pane fade">
+      <div class="col-sm-12" style="padding-top:20px">
+			<div class="col-sm-4 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm005964.png" style="width:100%"></div>
+			<div class="col-sm-4 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm005963.png" style="width:100%"></div>
+			<div class="col-sm-4 well well-lg" style="height: 135px; width: 25%"><input type="image" src="Resources/Images/itm005960.png" style="width:100%"></div>
+	 </div>	
+    </div> <!-- End of tab3 -->
+  </div> <!-- End of tab content -->
+  
+</div> <!-- End of Tab Div -->
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->
+	<div class="container">
+  <ul class="nav nav-tabs col-sm-12" style="padding-top:34px">
+    <li class="active"><a data-toggle="tab" href="#veggie">Veggie</a></li>
+    <li><a data-toggle="tab" href="#meat">Meat</a></li>
+    <li><a data-toggle="tab" href="#crustFlavor">Crust Flavor</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="veggie" class="tab-pane fade in active">
+      <h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div id="meat" class="tab-pane fade">
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="crustFlavor" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+  </div>
+</div>
+
+
+
+<!--  -->
+	
+--------------------	
+  
+  eager
+  
+ <tbody>
+ <c:forEach var="category" items="${categoryList}">
+ <div class="dropdown">
+ <button class="dropbtn">${category.categoryName}</>
+ 
+	<c:forEach var="i" items="${subCategoryList}">
+    <tr>
+    <td class="control-label col-sm-2">${i.subCategoryId}</td>
+	<td class="control-label col-sm-2">${i.category.categoryName}</td>
+	<td class="control-label col-sm-2">${i.subCategoryName}</td>
+	<td class="control-label col-sm-2">${i.subCategoryDescription}</td>
+	<td class="control-label col-sm-2"><a href="updateSubCategory-${i.subCategoryId}">Edit</a></td>
+    </tr>
+    </c:forEach>
+    </tbody>
+    
+    
+-------------------------------------------------------------------------------------------------------------------------------------------					
+AngularJS
+
+- AngularJS is used to replace the JavaServer Pages Standard Tag Library (JSTL).
+- JSTL works with jsp pages only.
+  AngularJS works with HTML pages as well.
+- JSTL tag ${ expression }
+  AngularJS {{ expression }}     
+
+- Load the AngularJS library either in the <head> or at the start of the <body>.
+
+- AngularJS is used as an attribute.
+
+- AngularJS extends HTML with ng-directives.
+	- The ng-app directive defines an AngularJS application
+	- The ng-model directive binds the value of HTML controls (input, select, textarea) to application data.
+	- The ng-bind directive binds application data to the HTML view.    
+
+- AngularJS expressions are written inside double braces: {{ expression }}.
+	- AngularJS will "output" data exactly where the expression is written  
+  	- AngularJS expressions bind AngularJS data to HTML the same way as the ng-bind directive.
+  	
+- AngularJS modules define AngularJS applications.
+- AngularJS controllers control AngularJS applications.	
+- The module is a container for the application controllers.
+- Controllers always belong to a module.
+
+- $scope is just like sessions in Java.
+ 
+- AngularJS understands only String format.
+- We can convert a list into String format using JSON.
+- We use JSON through GSON.
+
+Steps
+1. Paste angular.min.js file from cdn in js folder
+   Add the file in the header	
+2. Dependency of Google gson 1 
+3. Convert your data into json
+4. Write your script
+
+-------------------------------------------------------------------------------------------------------------------------------------------					
+Creating User Account and assigning a Cart to each User
+
+-------------------------------------------------------------------------------------------------------------------------------------------					
+Spring Security
+
+
+Welcome + Username
+
+<security:authorize access="isAuthenticated()">
+Welcome <security:authentication property="principal.username" /> 
+</security:authorize>
+
+
+Logout Button 
+
+@RequestMapping("/logout")
+	public String logout(HttpServletRequest request,HttpServletResponse response)
+	{
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if(authentication!=null)
+		{
+			new SecurityContextLogoutHandler().logout(request,response,authentication);
+		}
+		return "Login";
+	}
+-------------------------------------------------------------------------------------------------------------------------------------------					
+
+Sheetal
+
+public class product
+{
+@MAnytoone
+@jaoincolumn (name=suuplierID)
+private suppplier supplier
+{
+
+}
+public class supplier
+{
+@one to many(mappedBy="supplier")
+set<product>product
+}
+}
+---------------------------
+@OneToMany(mappedBy="Catgeory(copy from subcategory what u written)")
+private set<subCatgeory> Subcategory(create getter & setter)
+
+
+(index shown mam)page
+
+<div class="row">
+<c:forEach item="${categoryList}" var=l>
+<div style="fornt-wegiht:bold"class="col-md-2">${category.categoryName}</div>
+</c:forEach>
+<c:forEach item="${category.subCatgeory}" var="subcategory">
+<div>${subcategory.subcatgeoryName}</div>
+
+</c:forEach>
+</div>
+<hr>
+<div>
+
+
+<c:forEach>
+(use bookstrap navebar hover)
+</c:forEach>
+</div>
+
+
+main controller
+private categoryDervice category service
+@requemapp("/")
+public modeandview gethome(model model)
+{
+model.addattribute("categoryList",categoryService.list)
+}
+
+in category page @one to many use fach-type=EAGER
+
+
+use bookstrop navebar hover
+
+=================================================================
+	img upload
+1	add 2 depndency -commons io, commons file-upload
+2	product entity
+	public class product{
+	@Transient
+	private MultipartFile productImage
+	}
+3 	multipart resolver(applicatuion me add karo)
+4. 	<form:Form action=""modelAttribute="" enctype="multipart/form-data">
+	<form:input path="productImage" type="file">
+
+5.	Change in product controller(for code use java input-output code )
+	String path= D:/payal/project/imges
+
+=========================================================================
+8.3.2017
+
+angular js
+always in {{}} alternative of jstl of angular js
+
+ng is prefix for anfular js
+
+in jstal lag ${clist.categoryname}
+in angular js {{clist.categoryname}}
+
+angular js is use as attribute(property)
+
+jstl need jsp page but angular not requried jsp page 
+
+angular jas started
+<html ng-app>
+
+<body ng-controller>
+
+we can not use in one page only one time agular js, scope use as session
+
+for make code use .module
+<html ng-app="myApp">
+<body ng-controller="myController">
+<p>{{myscope}}</p>
+<script>
+var a=angular.module('myApp',[]);
+a.controller('myController', function($scope){
+$scope.myscope="this is my scope";
+});
+<script>
+
+angular understand only JSON
+
+we r using gson it help to convert in JSON
+
+1. angular.min.js cdn angular 2
+2. dependacy of google gson 1 
+3. convert your data into json
+4. write your script
+
+(search data temples)
+
+
+1 add dendancy
+2 search for angular1 cdn
+3 angular .min.js  add in header jsp below bootstrap
+4 restaed
+5 after last div 
+<script>
+var a=angular.module('myApp',[]);
+a.controller('myController', function($scope){
+$scope.myscope=${categoryList}
+$scope.myscope="this is my scope";
+});
+<script>
+
+
+about table 
+<div ng-app=="myApp">
+table class="table" ng-controller="myController">
+
+below list
+
+<tr ng-repet="clist(my pro it is l)" in myscope>
+<td>{{clist.categoryID}}</td>
+<td>{{clist.categoryName}}</td>
+\\
+\\
+</tr>
+
+
+
+daoimpl
+
+list ko copy karlo
+
+public string feach all categosryBY json()
+{
+below list code
+Gson g=new Gson();
+string list=g.toJson(getList);
+return list
+}
+
+service
+
+public string feach all categosryBY json()
+
+
+changes in controller in category 
+
+remove on oneto many option deleted from entity and comm to subcategory geter and setter
+
+and comm to index subCategory mapping
+
+
+
+
+den
+
+==============================================================================
+<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>1.7.2</version>
+</dependency>
+===============================================================================
+https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js 
+
+
+
+@SuppressWarnings("unchecked")
+	public String stringCategory() {
+		// TODO Auto-generated method stub
+		
+		List<Category> categoryJList = this.sessionFactory.getCurrentSession().createQuery("from Category").getResultList();
+		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		String categoryGson = gson.toJson(categoryJList);
+		return categoryGson;
+	}
+==========================================================================================================================================
+10.3.2017
+
+
+Crudopretion(create, update)
+User:String username, String password, boolean enabled, String role (this 4 are complsary), pramiry id is userId
+cart: onetoone>>cartId, userId onetoone 
+billingadd: userId onetoone 
+shippingadd: userId onetoone 
+
+make user entity>> userid, username, password, enable, String role after this use fname,lname,mobileno,gender use @Id,@Genret, create getter and setter
+
+make cart entity>> cartid, userid, pravite User user mapped with userid using oneto one(name=uderid, insertable, update, nullable), give @id, dont use auto id create getter-setter 
+.................................
+UserDao>>adduser
+
+UserDAOIMpl>> call sessionfactroy make @Autowired, 
+public adduser(User user)
+{
+session sessionFactroy.getCurrentse();
+user.setEnable(true)
+
+//ROLE_ADMIN for ADMIN & ROLE_SUPPLERfor for suppler
+user.SetRole("ROLE_USER")
+session.saveorupdate(user)
+
+cart cart=new cart();
+cart.setCartId(user.getuserId());
+sout(carete is is +cart.getcaretid())
+
+cart.setuserId(user.getUserID());
+
+session.saveorupdate(cart);
+
+sout(carete is is +cart.getcaretid())
+session.saveorupdate(user);
+}
+.......................................................
+UserService>>
+
+userDAoIMPL userDAoIMPL
+public adduser(User user)
+{
+as same
+}
+......................................................
+user controller>>
+
+
+pravite user service;
+
+@Request mapping("/registration page")
+public STring userregistration page(MOdel model)
+{
+model.addAttribute("user",new user());
+return"registration page;"
+} 
+@requestmapp("/adduser")
+public String adduser(@Module Atribute("user")user user)
+userservice.adduser(user)
+{
+retuen"/loging"
+}
+@requestmapp("/logingpage")
+public String userlogingpage()
+userservice.adduser(user)
+{
+retuen"/loging"
+}
+.............................................
+loginpagejsp>>
+
+<form:form class "form" action"adduser" modelattribute"user">
+<form:input path "fnmae" place holeder""fname>
+<form:input path "lnmae" place holeder""lname>
+
+<form:input calss"formclass"path "username" place holeder""fnameenter mailid>
+
+<form:input type= "password" path "password" place holeder""minimum 6to 12>
+
+<form:input type=="submit">
+</form:form>
+2740620
+
+
+....................................................
+
+
+>>put all calss name in applicationcon
+
+indepth(if know joint query then only use this below code)
+user:userid,String username, String password, boolean enabled
+userdetails: userid, fields u want
+role: roleid, role_name
+userrole=userid will mapped with userdetails/user, role id mapped with roleid
+
+====================================================================================================
+15.3.2017
+
+user
+cart
+userdetails=userid
+
+(if want then only use this userdetails)
+public class userdetails{
+privtae int userid;
+privateString dob;
+
+@onetoone
+@Joincolumn(userid)
+private user user
+}
+
+billingadd=userid
+shipping add=userid
+
+spring security
+1. dependancy
+spring security core
+spring security config
+spring security web
+spring security taglib
+
+spring-security.xml(add in contex param)
+--------------------------
+authentication query-select username,password,enabledfrom
+user where username=?
+authorization query-select username,role rom user
+
+search spring security 
+
+want to add Bean
+
+WEB_INF>>spring-security.xml>> loging-proces-url="perform_login" after login-page="/login" 
+add dependacy
+spring security core 4.2.2
+spring security config 4.2.2
+spring security web 4.2.2
+spring security taglib 4.2.2
+
+in xml make change 
+check qury 
+
+webxml add security xml after application con
+
+search spring security filter web.xml (name of filter is spring security filter chin)
+add in webxml before lister
+
+
+in loging page
+<form action="perform_login"(this came form loging proses) >
+<input name="username">
+<input name="password">
+
+<input name="submit">
+</form>
+
+web.xml
+--------------------------
+filter
+
+
+
+
+
